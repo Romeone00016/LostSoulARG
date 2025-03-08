@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Soul</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        #glitch {
+            font-size: 24px;
+            animation: glitch 0.5s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(2px, 0); }
+            50% { transform: translate(-2px, 2px); }
+            100% { transform: translate(0, -2px); }
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="glitch">Pourquoi es-tu ici ?</h1>
+        <p>Tu ne devrais pas être là...</p>
+        <button onclick="showHidden()">Accéder</button>
+        
+        <div id="secret" class="hidden">
+            <p>DOSSIER TROUVÉ : <a href="hidden_page.html">Ouvrir</a></p>
+            <p>Indice : Regarde la description de la vidéo...</p>
+        </div>
+    </div>
+    
+    <script>
+        function showHidden() {
+            document.getElementById('secret').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
